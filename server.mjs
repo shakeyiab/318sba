@@ -22,7 +22,7 @@ app.get('/', (req, res,) => {
       title: 'Sign Up',
      
     });
-  });.
+  });
 
 app.get('/', auth,(req, res) => {
     
@@ -44,12 +44,23 @@ app.set('view engine', 'pug')
   }
   
   function auth (req,res,next){
-    console.log("auth");
+//if(req.query.admin ==='true'){
     next()
+//}else { res.send('')}
   }
-  
 
-  
+  //post 
+  app.post('./views/default.pug',
+    (req, res) => {
+        const{username, email} =req.body;
+        res.send("thank you")
+    })
+//delete
+app.delete('./views/default.pug',
+    (req, res) => {
+        const{username, email} =req.body;
+        res.send("new user added")
+    })
 
 // Listen
 app.listen(PORT, () => {
