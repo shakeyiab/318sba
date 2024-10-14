@@ -1,8 +1,10 @@
 // Imports
 import express from 'express';
 
-import bodyParser from 'body-parser';
 
+import bodyParser from 'body-parser';
+import loggr from './data/logger.mjs';
+import auth from './data/auth.mjs';
 
 
 // Create an instance of express
