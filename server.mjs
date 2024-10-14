@@ -3,33 +3,53 @@ import express from 'express';
 import userroutes from './routes/userroutes.mjs';
 import fs from 'fs';
 import bodyParser from 'body-parser';
-import loggr from './data/logger.mjs';
-import auth from './data/auth.mjs';
+;
 
-import path from "path"
+
 
 // Create an instance of express
 const app = express();
 let PORT = 3000;
-
+app.use(logger)
+app.use(auth)
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
+
+
+app.get('/', (req, res,) => {
+    res.render('home', {
+      title: 'Sign Up',
+     
+    });
+  });.
+
+app.get('/', auth,(req, res) => {
+    
+  });
+
+
+
 
 
   
 app.set('views', './views')
 app.set('view engine', 'pug')
 
-app.get('/', (req, res) => {
-    res.render('home', {
-      title: 'Search Hacker News',
-    });
-  });
   
+
+  function logger(req,res,next){
+    console.log("thank you");
+    next()
+  }
   
+  function auth (req,res,next){
+    console.log("auth");
+    next()
+  }
   
-  app.use('/', userroutes);
+
+  
 
 // Listen
 app.listen(PORT, () => {
