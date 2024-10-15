@@ -1,0 +1,21 @@
+#well i attempted to make a sign in  page
+# the user is welcomed with a sign in page
+#the user will complete sign in steps
+#the promo code will be authenticate if invalid user will not be able to sign in
+#utilized the log middleware to log user sign in 
+#the user can delete the admin user by signing in once signing in the admin will be replaced and the new usr will be admin
+#once authenticated the user will be directed to the user page 
+#Create a server application with Node and Express.
+#Create a RESTful API using Express.
+#Create Express middleware.
+#Use Express middleware.
+#Use a template engine to render views with Express.
+#Interact with a self-made API through HTML forms.
+
+
+
+
+
+
+express js full course https://www.bing.com/videos/riverview/relatedvideo?&q=template+in+express+js&&mid=827E3589920BFA0E9590827E3589920BFA0E9590&&FORM=VRDGAR
+views https://expressjs.com/en/guide/using-template-engines.html
