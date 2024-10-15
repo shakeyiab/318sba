@@ -6,8 +6,11 @@ html
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
       title= title
       link(rel='stylesheet' type="text/css" href='/css/styles.css')
+      
     body
       block content
+      
+     
       form(action='/search' method='GET')
       input.home-input(autofocus='' placeholder='enter email' type='search' name='q')
       <button type="button">submit!</button>

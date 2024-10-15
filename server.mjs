@@ -1,6 +1,6 @@
 // Imports
 import express from 'express';
-import userroutes from './routes/userroutes.mjs';
+
 import fs from 'fs';
 import bodyParser from 'body-parser';
 ;
@@ -16,17 +16,21 @@ app.use(auth)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
-
+//routes
 app.get('/', (req, res,) => {
     res.render('home', {
       title: 'Sign Up',
      
     });
   });
+  app.get('/userpage', (req, res) => {
+    res.send('About Page');
+});
+  
 
-app.get('/', auth,(req, res) => {
-    
-  });
+
+
+
 
 
 
@@ -56,12 +60,15 @@ app.set('view engine', 'pug')
         res.send("thank you")
     })
 //delete
-app.delete('./views/default.pug',
+app.delete('./views/default.pug/:id',
     (req, res) => {
         const{username, email} =req.body;
         res.send("new user added")
     })
-
+//put
+app.put('/userpage', (req, res) => {
+    res.send('About Page');
+});
 // Listen
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
